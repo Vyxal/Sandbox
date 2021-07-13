@@ -1,0 +1,1 @@
+The [Vyxal Bot](https://github.com/Vyxal/VyxalBotSE) will post reGitHub activity into SE chat. Rather than create test issues, commits, or branches, it is better to unify all testing related things into one repository. Part of testing may include deleting this repository, so do **not** put anything important into this repository.
