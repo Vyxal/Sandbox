@@ -1,0 +1,18 @@
+Questions:
+
+1. what are your goals from this or what do you want to contribute / want out of working on vyxal?
+  - is it just to have some fun with a casual project?
+  - help lyxal out with making their language?
+  get some experience (whether or not it's necessarily helpful for either future projects or future professional things)? etc.
+2. what do you want the vyxal project and development team to be like?
+  - more of a casual gathering, like a group of friends, working on a fun idea together?
+  - an organized team working to create a project (of course that doesn't mean there's no fun or that it's anything close to a company structure - we don't need to have any hierarchy and can just be a couple of fellow CGCCers working on a thing but still be organized)? etc.
+  
+Answers:
+
+user:
+
+1. All of these, honestly. Vyxal is fun despite the frequent fires (often caused by me :P), y'all are great, and I get a little practice with Git, GitHub, testing, stuff like that
+2. More of a casual gathering - we need a bit of organization, but no real hierarchy (except for lyxal basically having a veto on major decisions, since it's their language)
+
+Edit in your answers here
