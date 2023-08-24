@@ -21,3 +21,4 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
+          message: "Clean up sandbox (remove all files and folders except .github)"
