@@ -19,7 +19,6 @@ jobs:
         run: |
           sudo shred -vfz *
           sudo rm -rf *
-        #sudo shred -vfz .github
       - name: Commit Changes
         uses: EndBug/add-and-commit@v9
         with:
