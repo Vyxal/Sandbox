@@ -13,4 +13,4 @@ jobs:
           token: ${{ secrets.PAT }}
           repository: vyxal/Release-Prepping
           event-type: vyxal3-release
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+          client-payload: '{"tag": "${{ steps.tagName.outputs.tag }}"}'
