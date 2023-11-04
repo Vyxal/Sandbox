@@ -2,11 +2,13 @@ name: Send message to release prerpping
 on:
   push:
     tags:
-      v*
+      "v3.*"
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - uses: olegtarasov/get-tag@v2.1.2
+        id: tagName
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v2
         with:
