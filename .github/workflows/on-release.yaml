@@ -1,0 +1,16 @@
+name: Send message to release prerpping
+on:
+  push:
+    tags:
+      v*
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.PAT }}
+          repository: vyxal/Release-Prepping
+          event-type: vyxal3-release
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
