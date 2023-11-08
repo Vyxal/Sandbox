@@ -16,6 +16,9 @@ jobs:
           owner: ${{ github.repository_owner }} 
       - uses: olegtarasov/get-tag@v2.1.2
         id: tagName
+      - name: Get all the files
+        id: file_names
+        run: f=$(python get_files.py); echo "${f}"
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v2
         env:
