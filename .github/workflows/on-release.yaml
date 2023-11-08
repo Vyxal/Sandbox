@@ -28,4 +28,4 @@ jobs:
           token: ${{ steps.generate_token.outputs.token }}
           repository: vyxal/Release-Prepping
           event-type: vyxal3-release
-          client-payload: '{"tag": "${{ steps.tagName.outputs.tag }}", "files": "[\"vyxal.js\"]"}'
+          client-payload: '{"tag": "${{ steps.tagName.outputs.tag }}", "files": "${FILES}"}'
