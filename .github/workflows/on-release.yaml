@@ -19,7 +19,7 @@ jobs:
         id: tagName
       - name: Get all the files
         id: file_names
-        run: g=$(ls); f=$(python get_files.py $g); echo "${f}"
+        run: g=$(ls); f=$(python filter_files.py $g); echo "${f}"
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v2
         env:
