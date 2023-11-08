@@ -5,13 +5,20 @@ on:
       "v3.*"
 jobs:
   release:
-    permissions: write-all
     runs-on: ubuntu-latest
     steps:
+      - name: Generate a token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.VB_APP_ID }}
+          private-key: ${{ secrets.VB_PRIVATE_KEY }}
       - uses: olegtarasov/get-tag@v2.1.2
         id: tagName
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v2
+        env:
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: vyxal/Release-Prepping
