@@ -19,7 +19,7 @@ jobs:
         id: tagName
       - name: Get all the files
         id: file_names
-        run: g=$(ls); f=$(python filter_files.py "${g}"); echo "FILES=${g}" >> "$GITHUB_ENV"
+        run: g=$(ls); f=$(python filter_files.py "${g}"); echo "FILES=${f}" >> "$GITHUB_ENV"
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v2
         env:
