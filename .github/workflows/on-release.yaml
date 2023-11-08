@@ -12,7 +12,7 @@ jobs:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ GITHUB_TOKEN }}
           repository: vyxal/Release-Prepping
           event-type: vyxal3-release
           client-payload: '{"tag": "${{ steps.tagName.outputs.tag }}"}'
