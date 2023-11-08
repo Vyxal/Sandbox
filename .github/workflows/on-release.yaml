@@ -21,7 +21,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.generate_token.outputs.token }}
           repository: vyxal/Release-Prepping
           event-type: vyxal3-release
           client-payload: '{"tag": "${{ steps.tagName.outputs.tag }}"}'
