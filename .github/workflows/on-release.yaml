@@ -5,6 +5,7 @@ on:
       "v3.*"
 jobs:
   release:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: olegtarasov/get-tag@v2.1.2
