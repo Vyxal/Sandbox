@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Wipe repository
-        uses: PlaceReporter99/repo-rm-clean@v0
+        uses: PlaceReporter99/repo-rm-clean@v0.1-patch
