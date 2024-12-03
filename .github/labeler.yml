@@ -1,2 +1,8 @@
 beans:
   - 'beans'
+
+cookie:
+  - 'cookies not welcome'
+
+banana:
+  - 'better than cookies in every way'
