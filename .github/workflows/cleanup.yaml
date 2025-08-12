@@ -1,0 +1,17 @@
+name: Clean up sandbox
+
+on: [workflow_dispatch]
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wipe repository
+        uses: PlaceReporter99/repo-rm-clean@v0.1-patch
