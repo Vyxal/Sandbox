@@ -1,0 +1,31 @@
+name: Send message to release prerpping
+on:
+  push:
+    tags:
+      "v3.*"
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate a token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.VB_APP_ID }}
+          private-key: ${{ secrets.VB_PRIVATE_KEY }} 
+          owner: ${{ github.repository_owner }} 
+      - uses: olegtarasov/get-tag@v2.1.2
+        id: tagName
+      - name: Get all the files
+        id: names
+        run: g=$(ls); f=$(python filter_files.py "${g}"); echo "FILES=${f}" >> "$GITHUB_ENV"
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        env:
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
+          repository: vyxal/versions
+          event-type: vyxal3-release
+          client-payload: '{"tag": "${{ steps.tagName.outputs.tag }}", "files": "${{ env.FILES }}"}'
